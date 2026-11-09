@@ -71,8 +71,16 @@ public class List {
     }
     
 
-    public void Delete(Object data) {
-        
+    public Node BuscarCliente(int data) {
+        Node cliente = null;
+        Node aux=head;
+        while(aux!=null) {
+            if (((Cliente)aux.getData()).getDocumento() == data) {
+                cliente = aux;
+            }
+            aux = aux.getLink();
+        }
+        return cliente;
     }
 
     @Override
