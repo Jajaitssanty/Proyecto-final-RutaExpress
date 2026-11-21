@@ -1,3 +1,5 @@
+package estructuras;
+
 public class DoubleNode {
     private DoubleNode previous;
     private Object data;

@@ -1,3 +1,5 @@
+package estructuras;
+
 public class DoubleList {
     private DoubleNode head;
     private DoubleNode last;

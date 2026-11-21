@@ -1,12 +1,16 @@
+package sedes;
+
+import estructuras.Queue;
+
 public class Sede {
     private String nombre;
     private String tipoDeSede;
-    private List paquetesParaDespachar;
+    private Queue paquetesParaDespachar;
 
     public Sede(String nombre, String tipoDeSede) {
         this.nombre = nombre;
         this.tipoDeSede = tipoDeSede;
-        paquetesParaDespachar = new List();
+        paquetesParaDespachar = new Queue();
     }
 
     public String getNombre() {
@@ -25,11 +29,11 @@ public class Sede {
         this.tipoDeSede = tipoDeSede;
     }
 
-    public List getPaquetesParaDespachar() {
+    public Queue getPaquetesParaDespachar() {
         return paquetesParaDespachar;
     }
 
-    public void setPaquetesParaDespachar(List paquetesParaDespachar) {
+    public void setPaquetesParaDespachar(Queue paquetesParaDespachar) {
         this.paquetesParaDespachar = paquetesParaDespachar;
     }
 

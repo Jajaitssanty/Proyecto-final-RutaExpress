@@ -1,8 +1,17 @@
+package estructuras;
+
+import modelos.Cliente;
+import grafo.Vertex;
+
 public class List {
     private Node head;
 
     public List() {
         head=null;
+    }
+
+    public Node getHead() {
+        return head;
     }
 
     public boolean isEmpty()
@@ -96,4 +105,46 @@ public class List {
         }
         return text;
     }
+
+   public Vertex SearchV(Object obj)
+   {
+       Node aux =head;
+       while(aux!=null)
+       {
+           Vertex v = (Vertex)aux.getData();
+           if(v.getData().equals(obj))
+               return v;
+           
+           aux=aux.getLink();
+       }       
+       return null;
+   }
+
+   public boolean DeleteV(Object obj)
+   {
+       if(isEmpty())
+           return false;
+
+       Vertex data = (Vertex)head.getData();
+       if(data.getData().equals(obj))
+       {
+           head = head.getLink();
+           return true;
+       }
+
+       Node previous = head;
+       Node aux = head.getLink();
+       while(aux!=null)
+       {
+           Vertex vertex = (Vertex)aux.getData();
+           if(vertex.getData().equals(obj))
+           {
+               previous.setLink(aux.getLink());
+               return true;
+           }
+           previous = aux;
+           aux = aux.getLink();
+       }
+       return false;
+   }
 }

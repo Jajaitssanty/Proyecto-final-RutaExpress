@@ -1,3 +1,7 @@
+package modelos;
+
+import estructuras.List;
+
 public class Cliente {
     private int documento;
     private String tipoDeCliente;
@@ -5,11 +9,12 @@ public class Cliente {
     private int telefono;
     private int correo;
     private String direccion;
+    private String municipio;
     private String fechaDeRegistro;
     private List guiaDePedidos;
 
     public Cliente(int documento, String tipoDeCliente, String nombre, int telefono, int correo,
-                   String direccion, String fechaDeRegistro) {
+                   String direccion, String municipio, String fechaDeRegistro) {
         this.documento = documento;
         this.tipoDeCliente = tipoDeCliente;
         this.nombre = nombre;
@@ -17,6 +22,7 @@ public class Cliente {
         this.correo = correo;
         this.direccion = direccion;
         this.fechaDeRegistro = fechaDeRegistro;
+        this.municipio = municipio;
         guiaDePedidos = new List();
     }
 
@@ -26,6 +32,14 @@ public class Cliente {
 
     public void setDocumento(int documento) {
         this.documento = documento;
+    }
+
+    public String getMunicipio() {
+        return municipio;
+    }
+
+    public void setMunicipio(String municipio) {
+        this.municipio = municipio;
     }
 
     public String getTipoDeCliente() {
